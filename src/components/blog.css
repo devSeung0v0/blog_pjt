@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+body {
+  font-family: "nanumsquare";
+}
+
+.nav {
+  background: #468;
+  width: 100%;
+  display: flex;
+  color: #fff;
+  padding: 20px;
+  font-weight: 600;
+  font-size: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navFeeling {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.list {
+  margin-top: 20px;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.modal {
+  margin-top: 20px;
+  padding: 20px;
+  background: #eee;
+}
+
+h3 {
+  cursor: pointer;
+}
