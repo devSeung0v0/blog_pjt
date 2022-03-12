@@ -46,23 +46,23 @@ export default function Blog(){
     titleCng(newTitle)
   }
 
-  const modalOpen = () => {
-    modal === true
-    ? modalCng(false)
-    : modalCng(true)
-  }
+  // const modalOpen = () => {
+  //   modal === true
+  //   ? modalCng(false)
+  //   : modalCng(true)
+  // }
 
-  const feelModalOpen = ()=> {
-    feel == true
-    ? feelCng(false)
-    : feelCng(true)
-  }
+  // const feelModalOpen = ()=> {
+  //   feel == true
+  //   ? feelCng(false)
+  //   : feelCng(true)
+  // }
 
   return(
     <div className="App">
       <div className='nav'>
         <p className='navTitle'>DevSeung's Blog</p>
-        <p className='navFeeling' onClick={ feelModalOpen }>What's up?
+        <p className='navFeeling' onClick={ () => feelCng(!feel) }>What's up?
         {
           feel === true
           ? <Emoji />
@@ -73,28 +73,29 @@ export default function Blog(){
         
       </div>
       <div className='list'>
-          <h3 onClick={ modalOpen }>{ title[0] }<span onClick={ likeNum }> 👍</span> { num } </h3>
+          <h3>{ title[0] }<span onClick={ likeNum }> 👍</span> { num } </h3>
           <p>{ date }</p>
           <button onClick={ dateFnc }>발행일 오늘 날짜로 변경</button>
           <button onClick={ titleSort }>제목 오름차순 정렬</button>
           <hr/>
       </div>
         <div className='list'>
-          <h3 onClick={ modalOpen }>{ title[1] }</h3>
+          <h3>{ title[1] }</h3>
           <p>{ date }</p>
           <button onClick={ titleFnc }> 제목 변경</button>
           <hr/>
         </div>
           <div className='list'>
-          <h3 onClick={ modalOpen }>{ title[2] }</h3>
+          <h3 onClick={ () => modalCng(!modal) }>{ title[2] }</h3>
           <p>{ date }</p>
+          {
+            modal === true
+            ? <Modal />
+            : null // 빈 html
+          }
           <hr/>
         </div>
-        {
-          modal === true
-          ? <Modal />
-          : null // 빈 html
-        }
+
     </div>
   );
 }
