@@ -39,4 +39,9 @@ body {
 
 h3 {
   cursor: pointer;
+  padding-right: 10px;
+}
+
+span {
+  padding-right: 5px;
 }
